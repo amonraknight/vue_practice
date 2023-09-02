@@ -49,6 +49,50 @@ Install Pinia:
 cnpm install pinia
 ```
 
+### Create a message interface.
+Each message should have the speaker, timestamp and text. However, only typescript supports interface. Ignore it.
+
+## Visit Restful API.
+It is recommended to use [axios](https://github.com/axios/axios) to visit Restful APIs.
+
+1. Install axios. 
+```
+cnpm install axios
+```
+
+2. Create an instance and return response data in an asynchronized way with Promise.
+```
+import axios from 'axios';
+
+var instance = axios.create({
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    timeout: 5000,
+    baseURL: 'http://127.0.0.1:8080',
+    withCredentials: false
+})
+
+function getReplyPromise(quertion) {
+    return new Promise((resolve, reject) => {
+        axiosInstance.post('/askquestion', {
+            question: quertion
+        })
+        .then(response => {
+            resolve(response)
+        })
+        .catch(error =>{
+            console.log('error: '+error)
+            reject(error)
+        })
+    })
+}
+
+```
+
+
+
+
 
 
 
