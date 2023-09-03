@@ -160,4 +160,24 @@ Add clearable and counter function to the textarea. The clear-icon needs the mdi
 Create a component for each chat item.
 
 
+## Format date
+```
+cnpm install moment
+```
 
+```
+import moment from 'moment';  
+  
+export default {  
+  data() {  
+    return {  
+      date: new Date()  
+    };  
+  },  
+  computed: {  
+    formattedDate() {  
+      return moment(this.date).format('YYYY-MM-DD HH:mm:ss');  
+    }  
+  }  
+};
+```
