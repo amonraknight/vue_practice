@@ -91,7 +91,64 @@ function getReplyPromise(quertion) {
 ```
 
 
+## Install [Vuetify](https://vuetifyjs.com/zh-Hans/getting-started/installation/) to buetify components.
 
+1. Install Vuetify through npm.
+```
+cnpm install vuetify --save
+```
+
+2. Add vuefity into App on main.js.
+```
+// Add Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+    components,
+    directives,
+})
+
+app.use(vuetify)
+```
+
+3. Install [icons and fonts](https://vuetifyjs.com/zh-Hans/features/icon-fonts/).
+Install the mdi icons first.
+```
+cnpm install @mdi/font -D
+```
+Then import it on main.js.
+```
+import '@mdi/font/css/materialdesignicons.css'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+const vuetify = createVuetify({
+	...
+    icons: {
+        defaultSet: 'mdi',
+        aliases,
+        sets: {
+          mdi
+        }
+    }
+})
+
+```
+
+## Use Vuetify.
+
+1. Use [<v-textarea>](https://vuetifyjs.com/en/components/textareas/).
+Add clearable and counter function to the textarea. The clear-icon needs the mdi icon support.
+```
+<v-textarea clearable counter
+        clear-icon="mdi-close-circle"
+        label="Type ctrl + enter to send."
+        v-model="inputContent" 
+        @keyup.ctrl.enter="onKeyup">
+        </v-textarea>
+```
 
 
 

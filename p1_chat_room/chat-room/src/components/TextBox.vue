@@ -7,6 +7,7 @@
     const history = chatHistory()
     var inputContent=ref('')
 
+
     function sendMessage() {
         if (inputContent.value) {
             console.log(inputContent.value)
@@ -27,9 +28,15 @@
 </script>
 
 <template>
-    <div class="messageedit">
-        <textarea placeholder="Type ctrl + enter to send." v-model="inputContent" @keyup.ctrl.enter="onKeyup"></textarea>
-    </div>
+
+    <v-container fluid>
+        <v-textarea clearable counter
+        clear-icon="mdi-close-circle"
+        label="Type ctrl + enter to send."
+        v-model="inputContent" 
+        @keyup.ctrl.enter="onKeyup">
+        </v-textarea>
+    </v-container>
     
     <button @click="sendMessage">Send</button>
 </template>
