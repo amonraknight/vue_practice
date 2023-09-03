@@ -1,18 +1,17 @@
 <script setup>
    import { chatHistory } from '../stores/ChatHis'
+   import ChatListItem from './ChatListItem.vue';
 
    const history = chatHistory()
 
 </script>
 
 <template>
-    <div class="chathsitory">
-        <ul v-if="history.allChatHistory">
-            <li v-for="item in history.allChatHistory">
-                <div class="message">{{ item.txt }}</div>
-            </li>
-        </ul>
-    </div>
+    <v-virtual-scroll height="300" :items="history.allChatHistory">
+        <template v-slot:default="{ item }">
+            <ChatListItem :speaker="item.spkr" :messageTxt="item.txt"></ChatListItem>
+        </template>
+    </v-virtual-scroll>
 </template>
 
 <style scoped>

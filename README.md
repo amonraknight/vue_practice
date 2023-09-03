@@ -150,7 +150,14 @@ Add clearable and counter function to the textarea. The clear-icon needs the mdi
         </v-textarea>
 ```
 
+2. Replace <button> with [<v-btn>](https://vuetifyjs.com/zh-Hans/components/buttons/).
+```
+<v-btn variant="tonal" color="green" @click="sendMessage">Send</v-btn>
+```
 
+
+3. Buetify the chat history list.
+Create a component for each chat item.
 
 
 

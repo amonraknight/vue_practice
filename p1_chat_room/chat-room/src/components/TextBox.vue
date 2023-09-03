@@ -38,7 +38,7 @@
         </v-textarea>
     </v-container>
     
-    <button @click="sendMessage">Send</button>
+    <v-btn variant="tonal" color="green" @click="sendMessage">Send</v-btn>
 </template>
 
 <style scoped>
