@@ -13,7 +13,7 @@
             console.log(inputContent.value)
             // Write into history.
             // console.log(history)
-            history.saveMessageToHistory(inputContent.value)
+            history.saveMessageToHistory('user', inputContent.value)
             // Commit the function from parent: get the reply.
             emit('submitQuestion', inputContent.value)
             // Clean the message.

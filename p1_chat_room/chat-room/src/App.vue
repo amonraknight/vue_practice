@@ -10,10 +10,10 @@
     // console.log('Got question:'+question)
     getReplyPromise(question)
     .then(response => {
-      history.saveMessageToHistory(response.data)
+      history.saveMessageToHistory('AI', response.data)
     })
     .catch(error => {
-      history.saveMessageToHistory('API is not available!')
+      history.saveMessageToHistory('AI', 'API is not available!')
     })
     
   }

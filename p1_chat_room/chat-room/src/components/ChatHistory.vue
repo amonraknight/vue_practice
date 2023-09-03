@@ -9,7 +9,7 @@
     <div class="chathsitory">
         <ul v-if="history.allChatHistory">
             <li v-for="item in history.allChatHistory">
-                <div class="message">{{ item }}</div>
+                <div class="message">{{ item.txt }}</div>
             </li>
         </ul>
     </div>
