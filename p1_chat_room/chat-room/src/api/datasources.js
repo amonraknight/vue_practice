@@ -4,10 +4,11 @@ const axiosInstance = instance
 
 function getReplyPromise(quertion) {
     return new Promise((resolve, reject) => {
-        axiosInstance.post('/askquestion', {
+        axiosInstance.post('/chat/postMessage', {
             question: quertion
         })
         .then(response => {
+            console.log('response: '+response)
             resolve(response)
         })
         .catch(error =>{
